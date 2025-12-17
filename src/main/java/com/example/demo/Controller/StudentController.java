@@ -28,6 +28,9 @@ publicclass StudentController {
 
     @putMapping("/update/{id}")
     public StudentEntity updateStudent{
-        @pathVar
-    }
+        @pathVariable Long id,
+        @RequestBody StudentEntity student) {
+            return service.updateStudent(id, student);
+        }
+    
 }
