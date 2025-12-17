@@ -8,7 +8,14 @@ import com.example.demo.service.StudentService;
 @RestController
 @RequestMapping("/student")
 publicclass StudentController {
-
     @Autowired
     private StudentService service;
+
+    @PostMapping("/add")
+    public StudentEntity addStudent(@RequestBody StudentEntity student) {
+        return service.addStudent(student);
+    }
+
+    @GetMapping("/all")
+    public List<studentEntity> grtAll
 }
