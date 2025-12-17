@@ -25,4 +25,21 @@ public class StudentEntity {
     public String getName() {
         return name;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void getAge(){
+        return age;
+    }
+    public void setAge(int age){
+        this.age = age;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public void ssetEmail(String email){
+        this
+    }
+
+    }
 }
