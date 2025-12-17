@@ -17,5 +17,17 @@ publicclass StudentController {
     }
 
     @GetMapping("/all")
-    public List<studentEntity> grtAll
+    public List<studentEntity> grtAllStudents() {
+        return dervice.getAllStudents();
+    }
+
+    @GetMapping("/{id}")
+    public StudentEntity getStudentById(@pathVariable Long id) {
+        return service.getStudent(id);
+    }
+
+    @putMapping("/update/{id}")
+    public StudentEntity updateStudent{
+        @pathVar
+    }
 }
