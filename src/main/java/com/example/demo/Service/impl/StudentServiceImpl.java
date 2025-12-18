@@ -2,29 +2,36 @@ package com.example.demo.service;
 
 import java.util.*;
 import org.springframework.stereotype.Service;
-import com.example.demo.entity.Student;
+import com.example.demo.entity.StudentEntity;
 
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    private final Map<Long, Student> store = new HashMap<>();
+    private final Map<Long, StudentEntity> store = new HashMap<>();
     private long counter = 1;
 
     @Override
-    public Student insertStudent(Student st) {
-        st.setId(counter++);
-        store.put(st.getId(), st);
-        return st;
+    public StudentEntity addStudent(StudentEntity student) {
+        student.setId(counter++);
+        store.put(student.getId(), student);
+        return student;
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public List<StudentEntity> getAllStudents() {
         return new ArrayList<>(store.values());
     }
 
     @Override
-    public Optional<Student> getOneStudent(Long id) {
-        return Optional.ofNullable(store.get(id));
+    public StudentEntity getStudent(Long id) {
+        return store.get(id);
+    }
+
+    @Override
+    public StudentEntity updateStudent(Long id, StudentEntity student) {
+        student.setId(id);
+        store.put(id, student);
+        return student;
     }
 
     @Override
