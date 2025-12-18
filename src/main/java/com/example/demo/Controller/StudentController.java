@@ -7,7 +7,7 @@ import com.example.demo.service.StudentService;
 
 @RestController
 @RequestMapping("/student")
-publicclass StudentController {
+public class StudentController {
     @Autowired
     private StudentService service;
 
